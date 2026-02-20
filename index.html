@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Expert | 레거시 업그레이드 & SEO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid #f0f0f0; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter">PHP.LAB</div>
+            <div class="space-x-8 text-sm font-medium text-gray-600">
+                <a href="#services" class="hover:text-black transition">Services</a>
+                <a href="#contact" class="hover:text-black transition font-bold text-blue-600">문의하기</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+                오래된 PHP를 <br><span class="text-blue-600">현대적인 성능</span>으로.
+            </h1>
+            <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                레거시 코드 버전 업그레이드부터 서버 이전, SEO 최적화 리포팅까지 전문가의 손길로 비즈니스의 기반을 강화합니다.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition">무료 진단 문의</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">제공 서비스</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 font-bold">01</div>
+                    <h3 class="text-xl font-bold mb-4">PHP 업그레이드</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">보안 취약점이 있는 5.x 버전을 최신 8.x 버전으로 안정적으로 컨버팅합니다.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 font-bold">02</div>
+                    <h3 class="text-xl font-bold mb-4">호스팅 & 이전</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">클라우드(AWS) 이전, 서버 환경 설정 및 데이터베이스 최적화를 대행합니다.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 font-bold">03</div>
+                    <h3 class="text-xl font-bold mb-4">SEO 리포팅</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">구글 상위 노출을 위한 기술적 SEO 분석과 개선 방향 리포트를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">문의하기</h2>
+                <p class="text-gray-500">현재 서비스 상태를 알려주시면 검토 후 연락드립니다.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/[여기에_Formspree_ID_입력]" method="POST" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2">성함/기업명</label>
+                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">회신받을 이메일</label>
+                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">문의 유형</label>
+                    <select name="type" class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 outline-none">
+                        <option value="upgrade">PHP 버전 업그레이드</option>
+                        <option value="server">호스팅 이전 작업</option>
+                        <option value="dev">프로그램 신규 개발</option>
+                        <option value="seo">SEO 리포팅</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">상세 내용</label>
+                    <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition" placeholder="현상이나 요구사항을 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+                    문의 신청하기
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-gray-100 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 PHP.LAB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
