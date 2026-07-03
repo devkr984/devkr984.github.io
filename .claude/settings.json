@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"e:\\\\_my_dev_folder\\\\New_Projects\\\\my-site\\\\devkr984_github\\\\index.html\")"
+    ]
+  }
+}
