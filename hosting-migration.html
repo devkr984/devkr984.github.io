@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호스팅 이전 서비스 | PHP.LAB</title>
+    <meta name="description" content="무중단 호스팅 이전 · 서버 마이그레이션 전문. 국내/해외 호스팅부터 AWS 클라우드까지 데이터 유실 없이 안전하게 옮겨드립니다.">
+    <meta name="keywords" content="호스팅이전, 서버이전, 마이그레이션, 무중단이전, AWS이전, 카페24이전, 가비아이전">
+    <link rel="canonical" href="http://gnudev.co.kr/hosting-migration.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter"><a href="/">PHP.LAB</a></div>
+            <div class="space-x-8 text-sm font-medium text-gray-600">
+                <a href="index.html#services" class="hover:text-black transition">Services</a>
+                <a href="hosting-migration.html" class="text-black font-bold">호스팅 이전</a>
+                <a href="index.html#pricing" class="hover:text-black transition">가격안내</a>
+                <a href="index.html#contact" class="hover:text-black transition font-bold text-blue-600">문의하기</a>
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://open.kakao.com/o/ssJ7X4vi" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#FEE500] text-black px-5 py-3 rounded-full shadow-lg hover:brightness-95 transition font-semibold text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M12 3C6.477 3 2 6.463 2 10.7c0 2.708 1.844 5.09 4.63 6.446-.204.75-.738 2.71-.847 3.13-.135.523.191.516.402.375.166-.11 2.64-1.79 3.71-2.52.686.098 1.39.15 2.105.15 5.523 0 10-3.463 10-7.581C22 6.463 17.523 3 12 3z"/></svg>
+        카카오톡 문의
+    </a>
+
+    <section class="pt-32 pb-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-6">호스팅 & 서버 이전</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
+                다운타임 걱정 없는 <br class="md:hidden"><span class="text-blue-600">무중단 호스팅 이전</span>
+            </h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                카페24, 가비아 등 국내 호스팅부터 해외 호스팅, AWS 클라우드까지 — 데이터 유실 없이, 서비스 중단 없이 안전하게 옮겨드립니다.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="index.html#contact" class="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition">무료 이전 진단 받기</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">이런 이유로 이전을 고민하고 계신가요?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">잦은 다운타임 · 느린 속도</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">방문자가 몰릴 때마다 사이트가 느려지거나 자주 다운되어 매출 손실이 걱정되는 경우.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">계약 만료 · 요금 부담</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">호스팅 계약 만료가 임박했거나, 더 합리적인 요금제·클라우드로 갈아타고 싶은 경우.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">이전 중 데이터 유실 우려</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">직접 이전을 시도하다 DB나 첨부파일이 깨질까 봐, 혹은 방법을 몰라 미루고 있는 경우.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">진행 프로세스</h2>
+            <p class="text-gray-500 text-center mb-14">평균 이전 소요 기간은 2~5일이며, 트래픽이 적은 새벽 시간대에 전환하여 다운타임을 최소화합니다.</p>
+            <div class="grid md:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">1</div>
+                    <h3 class="font-bold mb-2 text-sm">무료 진단</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">현재 서버·DB 환경과 이전 범위를 확인합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">2</div>
+                    <h3 class="font-bold mb-2 text-sm">전체 백업</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">웹소스, DB, 이메일을 원본 서버에 안전하게 백업합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">3</div>
+                    <h3 class="font-bold mb-2 text-sm">신규 서버 셋팅</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">대상 서버에 동일 환경을 구성하고 사전 테스트합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">4</div>
+                    <h3 class="font-bold mb-2 text-sm">무중단 전환</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">DNS 전환으로 서비스 중단 없이 트래픽을 이관합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">5</div>
+                    <h3 class="font-bold mb-2 text-sm">사후 모니터링</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">전환 후 1주일간 정상 작동 여부를 모니터링합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">이전 작업에 포함되는 항목</h2>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-5 max-w-3xl mx-auto">
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">웹소스 & 데이터베이스 이전</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">이메일 계정 및 메일 데이터 이전</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">도메인 & DNS 설정 변경</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">SSL 인증서 재설치</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">PHP/DB 버전 호환성 점검</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">이전 후 1주일 무료 사후지원</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">이전 유형별 가격</h2>
+            <p class="text-gray-500 text-center mb-12">정확한 견적은 서버 환경과 데이터 용량에 따라 상담 후 안내드립니다.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">국내 호스팅 이전</h3>
+                    <p class="text-3xl font-extrabold mb-1">50,000원<span class="text-base font-medium text-gray-400">부터</span></p>
+                    <p class="text-sm text-gray-500 mb-6">카페24, 가비아 등 국내 업체 간 이전</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>웹소스 & DB 이전</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>도메인 연결</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>기본 SSL 설정</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-gray-100 hover:bg-gray-200 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+                <div class="p-8 bg-white rounded-2xl border-2 border-blue-600 shadow-lg flex flex-col relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">인기</span>
+                    <h3 class="text-lg font-bold mb-2">해외 호스팅 이전</h3>
+                    <p class="text-3xl font-extrabold mb-1">100,000원<span class="text-base font-medium text-gray-400">부터</span></p>
+                    <p class="text-sm text-gray-500 mb-6">해외 서버 ↔ 국내 서버 간 이전</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>웹소스 & DB 이전</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>이메일 계정 이전</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>무중단 DNS 전환</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-blue-600 text-white hover:bg-blue-700 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+                <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">AWS/클라우드 마이그레이션</h3>
+                    <p class="text-3xl font-extrabold mb-1">300,000원<span class="text-base font-medium text-gray-400">부터</span></p>
+                    <p class="text-sm text-gray-500 mb-6">클라우드 서버 구축 및 이전</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>클라우드 서버 환경 구성</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>DB 최적화</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>무중단 전환 & 모니터링</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-gray-100 hover:bg-gray-200 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8">* 위 가격은 예시이며, 실제 견적은 서버 환경과 데이터 용량에 따라 달라질 수 있습니다.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">자주 묻는 질문</h2>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded-xl p-6" open>
+                    <summary class="flex justify-between items-center font-semibold">
+                        이전 중에 사이트가 멈추나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">아니요. 신규 서버에 먼저 구성을 마치고 검증한 뒤 DNS를 전환하는 방식으로 진행하여, 대부분의 경우 서비스 중단 없이 이전이 완료됩니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        이전 작업은 얼마나 걸리나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">단순 호스팅 이전은 2~3일, 데이터 용량이 크거나 클라우드 구성이 필요한 경우 3~5일 정도 소요됩니다. 정확한 일정은 진단 후 안내드립니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        이전 후 기존 서버는 언제 해지해야 하나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">신규 서버에서 최소 1~2주간 정상 작동을 확인한 뒤 해지하시길 권장드립니다. 사후 모니터링 기간 동안 이상 유무를 함께 확인해 드립니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        어떤 호스팅사에서도 이전이 가능한가요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">카페24, 가비아, 호스팅어, AWS, 자체 서버(VPS) 등 대부분의 환경 간 이전을 지원합니다. 특수한 솔루션을 사용 중이시라면 상담 시 말씀해 주세요.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black text-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">지금 사용 중인 서버 정보만 알려주세요.</h2>
+            <p class="text-gray-400 mb-8">무료 진단 후 예상 소요 기간과 정확한 견적을 안내해 드립니다.</p>
+            <a href="index.html#contact" class="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition">무료 이전 진단 신청</a>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-gray-100 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 PHP.LAB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
