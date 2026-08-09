@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹사이트 유지보수 서비스 | PHP.LAB</title>
+    <meta name="description" content="정기 보안 업데이트, 백업, 장애 대응까지. 담당 개발자 없이 운영 중인 웹사이트를 매달 안정적으로 관리해 드리는 유지보수 서비스입니다.">
+    <meta name="keywords" content="웹사이트유지보수, 홈페이지유지보수, 웹사이트관리, 보안업데이트, 정기백업, 장애대응, 서버모니터링">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gnudev.co.kr/website-maintenance.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PHP.LAB">
+    <meta property="og:title" content="웹사이트 유지보수 서비스 | PHP.LAB">
+    <meta property="og:description" content="정기 보안 업데이트, 백업, 장애 대응까지. 담당 개발자 없이 운영 중인 웹사이트를 매달 안정적으로 관리해 드리는 유지보수 서비스입니다.">
+    <meta property="og:url" content="https://gnudev.co.kr/website-maintenance.html">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="웹사이트 유지보수 서비스 | PHP.LAB">
+    <meta name="twitter:description" content="정기 보안 업데이트, 백업, 장애 대응까지. 담당 개발자 없이 운영 중인 웹사이트를 매달 안정적으로 관리해 드리는 유지보수 서비스입니다.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://gnudev.co.kr/" },
+            { "@type": "ListItem", "position": 2, "name": "웹사이트 유지보수", "item": "https://gnudev.co.kr/website-maintenance.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "웹사이트 유지보수 · 정기 관리",
+        "name": "웹사이트 유지보수 서비스",
+        "url": "https://gnudev.co.kr/website-maintenance.html",
+        "description": "보안 업데이트, 정기 백업, 장애 모니터링 및 대응까지 웹사이트를 매달 안정적으로 관리해 드리는 유지보수 서비스입니다.",
+        "provider": { "@type": "ProfessionalService", "name": "PHP.LAB", "url": "https://gnudev.co.kr/" },
+        "areaServed": "KR",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "유지보수 플랜별 가격",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "베이직 플랜" }, "price": "100000", "priceCurrency": "KRW" },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "스탠다드 플랜" }, "price": "150000", "priceCurrency": "KRW" },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "프리미엄 플랜" }, "price": "250000", "priceCurrency": "KRW" }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "이미 운영 중인 사이트도 유지보수 신청이 가능한가요?",
+                "acceptedAnswer": { "@type": "Answer", "text": "네, 가능합니다. 계약 전 현재 서버·소스 상태를 무료로 점검한 뒤, 결과에 맞는 플랜을 안내해 드립니다." }
+            },
+            {
+                "@type": "Question",
+                "name": "장애가 발생하면 얼마나 빨리 대응해 주시나요?",
+                "acceptedAnswer": { "@type": "Answer", "text": "플랜에 따라 영업시간 기준 2~4시간 이내 1차 대응을 원칙으로 하며, 프리미엄 플랜은 24시간 긴급 대응을 지원합니다." }
+            },
+            {
+                "@type": "Question",
+                "name": "백업은 얼마나 자주 진행되나요?",
+                "acceptedAnswer": { "@type": "Answer", "text": "기본적으로 주 1회 웹소스와 데이터베이스를 백업하며, 스탠다드 플랜 이상은 매일 자동 백업을 제공합니다." }
+            },
+            {
+                "@type": "Question",
+                "name": "계약 기간과 해지 조건은 어떻게 되나요?",
+                "acceptedAnswer": { "@type": "Answer", "text": "월 단위 정기 결제이며 최소 약정 기간은 없습니다. 해지를 원하시면 다음 결제일 전에 요청해 주시면 됩니다." }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter"><a href="/">PHP.LAB</a></div>
+            <div class="space-x-8 text-sm font-medium text-gray-600">
+                <a href="index.html#services" class="hover:text-black transition">Services</a>
+                <a href="hosting-migration.html" class="hover:text-black transition">호스팅 이전</a>
+                <a href="website-maintenance.html" class="text-black font-bold">유지보수</a>
+                <a href="index.html#pricing" class="hover:text-black transition">가격안내</a>
+                <a href="index.html#contact" class="hover:text-black transition font-bold text-blue-600">문의하기</a>
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://open.kakao.com/o/ssJ7X4vi" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#FEE500] text-black px-5 py-3 rounded-full shadow-lg hover:brightness-95 transition font-semibold text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M12 3C6.477 3 2 6.463 2 10.7c0 2.708 1.844 5.09 4.63 6.446-.204.75-.738 2.71-.847 3.13-.135.523.191.516.402.375.166-.11 2.64-1.79 3.71-2.52.686.098 1.39.15 2.105.15 5.523 0 10-3.463 10-7.581C22 6.463 17.523 3 12 3z"/></svg>
+        카카오톡 문의
+    </a>
+
+    <section class="pt-32 pb-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-6">웹사이트 유지보수</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
+                담당 개발자 없이도 <br class="md:hidden"><span class="text-blue-600">안심하고 운영</span>하세요
+            </h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                보안 패치, 정기 백업, 장애 모니터링과 대응까지 — 매달 정해진 비용으로 웹사이트를 전문가가 대신 관리해 드립니다.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="index.html#contact" class="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition">무료 사이트 점검 받기</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">이런 경우 유지보수가 필요합니다</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">담당 개발자가 퇴사·부재</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">사이트를 만든 담당자가 없어 작은 오류 하나도 손대지 못하고 방치되는 경우.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">보안 업데이트가 밀려있음</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">CMS·라이브러리 보안 패치를 오랫동안 적용하지 못해 해킹·악성코드 위험이 높아진 경우.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-3">장애 발생 시 대응이 불가능</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">사이트가 갑자기 다운되거나 오류가 떠도 누구에게 연락해야 할지 몰라 발만 동동 구르는 경우.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">유지보수 진행 프로세스</h2>
+            <p class="text-gray-500 text-center mb-14">계약 후 첫 점검을 시작으로, 매달 정기적인 관리와 리포트를 받아보실 수 있습니다.</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">1</div>
+                    <h3 class="font-bold mb-2 text-sm">무료 사이트 점검</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">현재 서버·소스·보안 상태를 진단하고 플랜을 안내합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">2</div>
+                    <h3 class="font-bold mb-2 text-sm">정기 점검 & 패치</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">보안 취약점과 오류를 주기적으로 점검하고 패치합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">3</div>
+                    <h3 class="font-bold mb-2 text-sm">자동 백업</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">웹소스와 DB를 정기적으로 백업해 만일의 사고에 대비합니다.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">4</div>
+                    <h3 class="font-bold mb-2 text-sm">장애 대응 & 월간 리포트</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">이상 발생 시 즉시 대응하고, 매달 점검 결과를 리포트로 공유합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">유지보수에 포함되는 항목</h2>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-5 max-w-3xl mx-auto">
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">보안 패치 & 취약점 점검</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">웹소스 & 데이터베이스 정기 백업</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">서버 가동 & 장애 모니터링</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">간단한 콘텐츠 · 텍스트 수정</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">SSL 인증서 만료 관리</span></div>
+                <div class="flex items-start gap-3"><span class="text-blue-600 font-bold">✓</span><span class="text-gray-700 text-sm">월간 점검 리포트 제공</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">유지보수 플랜별 가격</h2>
+            <p class="text-gray-500 text-center mb-12">사이트 규모와 트래픽에 따라 정확한 견적은 상담 후 안내드립니다.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">베이직</h3>
+                    <p class="text-3xl font-extrabold mb-1">100,000원<span class="text-base font-medium text-gray-400">/월</span></p>
+                    <p class="text-sm text-gray-500 mb-6">소규모 사이트 · 최소 관리 기준</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>주 1회 백업</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>월 1회 보안 점검</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>영업일 기준 대응</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-gray-100 hover:bg-gray-200 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+                <div class="p-8 bg-white rounded-2xl border-2 border-blue-600 shadow-lg flex flex-col relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">인기</span>
+                    <h3 class="text-lg font-bold mb-2">스탠다드</h3>
+                    <p class="text-3xl font-extrabold mb-1">150,000원<span class="text-base font-medium text-gray-400">/월</span></p>
+                    <p class="text-sm text-gray-500 mb-6">일반 운영 사이트 기준</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>매일 자동 백업</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>주 1회 보안 점검</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>4시간 이내 장애 대응</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-blue-600 text-white hover:bg-blue-700 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+                <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">프리미엄</h3>
+                    <p class="text-3xl font-extrabold mb-1">250,000원<span class="text-base font-medium text-gray-400">/월</span></p>
+                    <p class="text-sm text-gray-500 mb-6">트래픽이 많거나 24시간 대응이 필요한 경우</p>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>매일 자동 백업 & 실시간 모니터링</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>24시간 긴급 장애 대응</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-600">✓</span>월 2시간 콘텐츠 수정 지원</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-center bg-gray-100 hover:bg-gray-200 transition rounded-xl py-3 font-semibold">문의하기</a>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8">* 위 가격은 예시이며, 실제 견적은 사이트 규모와 트래픽에 따라 달라질 수 있습니다.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center">자주 묻는 질문</h2>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded-xl p-6" open>
+                    <summary class="flex justify-between items-center font-semibold">
+                        이미 운영 중인 사이트도 유지보수 신청이 가능한가요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">네, 가능합니다. 계약 전 현재 서버·소스 상태를 무료로 점검한 뒤, 결과에 맞는 플랜을 안내해 드립니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        장애가 발생하면 얼마나 빨리 대응해 주시나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">플랜에 따라 영업시간 기준 2~4시간 이내 1차 대응을 원칙으로 하며, 프리미엄 플랜은 24시간 긴급 대응을 지원합니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        백업은 얼마나 자주 진행되나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">기본적으로 주 1회 웹소스와 데이터베이스를 백업하며, 스탠다드 플랜 이상은 매일 자동 백업을 제공합니다.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-xl p-6">
+                    <summary class="flex justify-between items-center font-semibold">
+                        계약 기간과 해지 조건은 어떻게 되나요?
+                        <span class="faq-icon text-blue-600 text-xl transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">월 단위 정기 결제이며 최소 약정 기간은 없습니다. 해지를 원하시면 다음 결제일 전에 요청해 주시면 됩니다.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black text-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">지금 운영 중인 사이트 주소만 알려주세요.</h2>
+            <p class="text-gray-400 mb-8">무료 점검 후 사이트 상태와 적합한 유지보수 플랜을 안내해 드립니다.</p>
+            <a href="index.html#contact" class="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition">무료 사이트 점검 신청</a>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-gray-100 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 PHP.LAB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
