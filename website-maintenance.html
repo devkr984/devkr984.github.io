@@ -94,15 +94,51 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold tracking-tighter"><a href="/">PHP.LAB</a></div>
-            <div class="space-x-8 text-sm font-medium text-gray-600">
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
                 <a href="index.html#services" class="hover:text-black transition">Services</a>
                 <a href="hosting-migration.html" class="hover:text-black transition">호스팅 이전</a>
                 <a href="website-maintenance.html" class="text-black font-bold">유지보수</a>
                 <a href="index.html#pricing" class="hover:text-black transition">가격안내</a>
                 <a href="index.html#contact" class="hover:text-black transition font-bold text-blue-600">문의하기</a>
             </div>
+            <button id="menu-btn" class="md:hidden text-gray-700" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4 text-sm font-medium text-gray-600">
+            <a href="index.html#services" class="block hover:text-black transition">Services</a>
+            <a href="hosting-migration.html" class="block hover:text-black transition">호스팅 이전</a>
+            <a href="website-maintenance.html" class="block text-black font-bold">유지보수</a>
+            <a href="index.html#pricing" class="block hover:text-black transition">가격안내</a>
+            <a href="index.html#contact" class="block hover:text-black transition font-bold text-blue-600">문의하기</a>
         </div>
     </nav>
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var iconOpen = document.getElementById('menu-icon-open');
+            var iconClose = document.getElementById('menu-icon-close');
+            function closeMenu() {
+                menu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+            btn.addEventListener('click', function () {
+                var isOpen = !menu.classList.contains('hidden');
+                if (isOpen) { closeMenu(); return; }
+                menu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            });
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', closeMenu);
+            });
+        })();
+    </script>
 
     <a href="https://open.kakao.com/o/ssJ7X4vi" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#FEE500] text-black px-5 py-3 rounded-full shadow-lg hover:brightness-95 transition font-semibold text-sm">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M12 3C6.477 3 2 6.463 2 10.7c0 2.708 1.844 5.09 4.63 6.446-.204.75-.738 2.71-.847 3.13-.135.523.191.516.402.375.166-.11 2.64-1.79 3.71-2.52.686.098 1.39.15 2.105.15 5.523 0 10-3.463 10-7.581C22 6.463 17.523 3 12 3z"/></svg>
