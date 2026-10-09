@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 | PHP.LAB</title>
+    <meta name="description" content="PHP 업그레이드, 호스팅 이전, 웹사이트·워드프레스 유지보수 현장에서 얻은 실전 노하우와 보안·운영 팁을 공유하는 PHP.LAB 블로그입니다.">
+    <meta name="keywords" content="PHP블로그, 웹사이트유지보수팁, 워드프레스관리, 호스팅이전후기, 서버보안">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gnudev.co.kr/blog.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PHP.LAB">
+    <meta property="og:title" content="블로그 | PHP.LAB">
+    <meta property="og:description" content="PHP 업그레이드, 호스팅 이전, 웹사이트·워드프레스 유지보수 현장에서 얻은 실전 노하우와 보안·운영 팁을 공유하는 PHP.LAB 블로그입니다.">
+    <meta property="og:url" content="https://gnudev.co.kr/blog.html">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="블로그 | PHP.LAB">
+    <meta name="twitter:description" content="PHP 업그레이드, 호스팅 이전, 웹사이트·워드프레스 유지보수 현장에서 얻은 실전 노하우와 보안·운영 팁을 공유하는 PHP.LAB 블로그입니다.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://gnudev.co.kr/" },
+            { "@type": "ListItem", "position": 2, "name": "블로그", "item": "https://gnudev.co.kr/blog.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "PHP.LAB 블로그",
+        "url": "https://gnudev.co.kr/blog.html",
+        "description": "PHP 업그레이드, 호스팅 이전, 웹사이트·워드프레스 유지보수 현장에서 얻은 실전 노하우를 공유합니다.",
+        "publisher": { "@type": "ProfessionalService", "name": "PHP.LAB", "url": "https://gnudev.co.kr/" }
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter"><a href="/">PHP.LAB</a></div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+                <a href="index.html#services" class="hover:text-black transition">Services</a>
+                <a href="hosting-migration.html" class="hover:text-black transition">호스팅 이전</a>
+                <a href="website-maintenance.html" class="hover:text-black transition">유지보수</a>
+                <a href="wordpress-maintenance.html" class="hover:text-black transition">워드프레스 유지보수</a>
+                <a href="blog.html" class="text-black font-bold">블로그</a>
+                <a href="index.html#pricing" class="hover:text-black transition">가격안내</a>
+                <a href="index.html#contact" class="hover:text-black transition font-bold text-blue-600">문의하기</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-gray-700" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4 text-sm font-medium text-gray-600">
+            <a href="index.html#services" class="block hover:text-black transition">Services</a>
+            <a href="hosting-migration.html" class="block hover:text-black transition">호스팅 이전</a>
+            <a href="website-maintenance.html" class="block hover:text-black transition">유지보수</a>
+            <a href="wordpress-maintenance.html" class="block hover:text-black transition">워드프레스 유지보수</a>
+            <a href="blog.html" class="block text-black font-bold">블로그</a>
+            <a href="index.html#pricing" class="block hover:text-black transition">가격안내</a>
+            <a href="index.html#contact" class="block hover:text-black transition font-bold text-blue-600">문의하기</a>
+        </div>
+    </nav>
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var iconOpen = document.getElementById('menu-icon-open');
+            var iconClose = document.getElementById('menu-icon-close');
+            function closeMenu() {
+                menu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+            btn.addEventListener('click', function () {
+                var isOpen = !menu.classList.contains('hidden');
+                if (isOpen) { closeMenu(); return; }
+                menu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            });
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', closeMenu);
+            });
+        })();
+    </script>
+
+    <a href="https://open.kakao.com/o/ssJ7X4vi" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#FEE500] text-black px-5 py-3 rounded-full shadow-lg hover:brightness-95 transition font-semibold text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M12 3C6.477 3 2 6.463 2 10.7c0 2.708 1.844 5.09 4.63 6.446-.204.75-.738 2.71-.847 3.13-.135.523.191.516.402.375.166-.11 2.64-1.79 3.71-2.52.686.098 1.39.15 2.105.15 5.523 0 10-3.463 10-7.581C22 6.463 17.523 3 12 3z"/></svg>
+        카카오톡 문의
+    </a>
+
+    <section class="pt-32 pb-16 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-6">블로그</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
+                실전에서 얻은 <br class="md:hidden"><span class="text-blue-600">운영 노하우</span>를 공유합니다
+            </h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                PHP 업그레이드, 호스팅 이전, 웹사이트·워드프레스 유지보수 현장에서 쌓은 경험과 보안·운영 팁을 정리합니다.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-3xl font-bold">PHP</div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-blue-600 mb-2">PHP 업그레이드</span>
+                        <h2 class="text-lg font-bold mb-2 leading-snug">
+                            <a href="blog-post-template.html" class="hover:underline">PHP 7.4 지원 종료, 지금 업그레이드해야 하는 이유</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-1">보안 패치가 끊긴 PHP 7.x를 방치하면 어떤 위험이 생기는지, 8.x 업그레이드 과정과 체크리스트를 정리했습니다.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <time datetime="2026-09-15">2026.09.15</time>
+                            <a href="blog-post-template.html" class="text-blue-600 font-semibold hover:underline">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white text-3xl font-bold">Server</div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-blue-600 mb-2">호스팅 이전</span>
+                        <h2 class="text-lg font-bold mb-2 leading-snug">
+                            <a href="blog-post-template.html" class="hover:underline">서비스 중단 없이 호스팅을 이전하는 방법</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-1">DNS 전환 타이밍, 데이터 검증 순서까지 — 무중단 호스팅 이전을 위해 꼭 확인해야 할 절차를 소개합니다.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <time datetime="2026-08-28">2026.08.28</time>
+                            <a href="blog-post-template.html" class="text-blue-600 font-semibold hover:underline">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold">WP</div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-blue-600 mb-2">워드프레스 유지보수</span>
+                        <h2 class="text-lg font-bold mb-2 leading-snug">
+                            <a href="blog-post-template.html" class="hover:underline">워드프레스 플러그인 업데이트, 안전하게 하는 법</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-1">업데이트 후 사이트가 깨지는 가장 흔한 원인과, 백업부터 롤백까지 안전하게 업데이트하는 순서를 정리했습니다.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <time datetime="2026-08-10">2026.08.10</time>
+                            <a href="blog-post-template.html" class="text-blue-600 font-semibold hover:underline">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="flex justify-center items-center gap-2 mt-16 text-sm font-medium">
+                <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-black text-white font-bold">1</span>
+                <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 transition">2</a>
+                <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 transition">3</a>
+                <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 transition" aria-label="다음 페이지">→</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black text-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">지금 운영 중인 사이트, 무료로 점검해 드립니다.</h2>
+            <p class="text-gray-400 mb-8">PHP 버전, 보안 상태, 백업 여부까지 — 전문가가 직접 확인해 드립니다.</p>
+            <a href="index.html#contact" class="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition">무료 점검 신청</a>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-gray-100 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 PHP.LAB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
