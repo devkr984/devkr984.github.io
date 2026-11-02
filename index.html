@@ -253,7 +253,7 @@ nav: home
 
       if (res.ok) {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'contact_form_success', form_id: 'contact-form' });
+        window.dataLayer.push({ event: 'submit_lead_form', form_id: 'contact-form' });
         form.reset();
         status.textContent = '문의가 접수되었습니다. 빠르게 연락드리겠습니다.';
       } else {
